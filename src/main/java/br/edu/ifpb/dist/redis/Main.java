@@ -30,10 +30,8 @@ public class Main {
                     System.out.println("\n--- Adicionar Tarefa ---");
                     System.out.print("Descrição da Tarefa: ");
                     String description = scanner.nextLine();
-                    String id = String.valueOf(System.currentTimeMillis());
-                    TodoItem todo = new TodoItem(id, description, false);
-                    todoService.addTodo(todo);
-                    System.out.println("Tarefa '" + description + "' adicionada com sucesso!");
+                    TodoItem todo = new TodoItem(null, description, false);
+                    System.out.println(todoService.addTodo(todo));
                     break;
 
                 case 2:
@@ -53,22 +51,20 @@ public class Main {
                     System.out.println("\n--- Marcar Tarefa como Concluída ---");
                     System.out.print("ID da Tarefa a ser concluída: ");
                     String completeId = scanner.nextLine();
-                    todoService.completeTodo(completeId);
-                    System.out.println("Tarefa " + completeId + " marcada como concluída!");
+                    System.out.println(todoService.completeTodo(completeId));
                     break;
 
                 case 4:
                     System.out.println("\n--- Excluir Tarefa ---");
                     System.out.print("ID da Tarefa a ser excluída: ");
                     String deleteId = scanner.nextLine();
-                    todoService.deleteTodo(deleteId);
-                    System.out.println("Tarefa " + deleteId + " excluída com sucesso!");
+                    System.out.println(todoService.deleteTodo(deleteId));
                     break;
 
                 case 5:
                     System.out.println("\nSaindo do aplicativo... Até logo!");
-                    scanner.close();
                     todoService.close();
+                    scanner.close();
                     return;
 
                 default:
