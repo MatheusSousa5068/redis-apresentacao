@@ -37,7 +37,6 @@ public class Main {
                     break;
 
                 case 2:
-                    // Listar Tarefas
                     List<TodoItem> todos = todoService.getAllTodos();
                     System.out.println("\n--- Tarefas Cadastradas ---");
                     if (todos.isEmpty()) {
