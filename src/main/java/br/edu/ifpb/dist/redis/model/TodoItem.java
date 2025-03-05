@@ -5,10 +5,16 @@ public class TodoItem {
     private String description;
     private boolean completed;
 
-    public TodoItem(String id, String description, boolean completed) {
+    public TodoItem(String id, String description) {
         this.id = id;
         this.description = description;
         this.completed = false;
+    }
+
+    public TodoItem(String id, String description, boolean completed) {
+        this.id = id;
+        this.description = description;
+        this.completed = completed;
     }
 
     public String getId() {
